@@ -1,0 +1,123 @@
+______________________________________
+ch1
+
+C++ has multiple inheritence, java replaced that with interfaces
+
+applets
+
+
+_______________________________________
+ch2
+
+ctrl+ f11 to run code in eclipse
+http://javapapers.com/core-java/eclipse-shortcuts/
+
+
+JFrame 
+// to create top level window frame with border and title
+we add all the buttons and window options in the jframe
+http://docs.oracle.com/javase/tutorial/uiswing/components/frame.html
+
+
+Jlabel
+to display either text or images or both in a Jframe
+set position, size, content, add to the created jframe
+private JLabel headerLabel;
+headerLabel = new JLabel("", JLabel.CENTER);
+      mainFrame.add(headerLabel);
+http://www.tutorialspoint.com/swing/swing_jlabel.htm
+
+
+JFileChooser
+to create a gui file chooser to open/choose file from computer 
+private JFileChooser chooser;
+chooser = new JFileChooser();
+ chooser.setCurrentDirectory(new File("."));
+ http://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html
+ 
+ 
+JMenuBar
+to create the top menu bar in the JFrame, it sits above the content pane, in the JmenuBar we add the Jmenus
+and in the Jmenus we can add the JmenuItems
+http://www.macs.hw.ac.uk/guidebook/?name=JMenuBar&page=1
+
+
+JMenu
+to add a menu to the JMenuBar, create it first, then add it to the JNMenuBar using the .add(menuName)
+
+
+JMenuItem
+similar to the way Jmenu is created. we create it first, then add it to a JMenu
+
+
+ActionListener
+to create what will happen when a certain event happens (user clicks a button, chooses a menu item, etc)
+it requires 3 steps:
+1- declare an event handler class and specify that the class implements the ActionListener interface or
+extends a class that does that
+public class MyClass implements ActionListener { 
+2- Register an instance of the event handler class as a listener on one or more components. 
+someComponent.addActionListener(instanceOfMyClass);
+3- Include code that implements the methods in listener interface. For example:
+public void actionPerformed(ActionEvent e) { 
+    ...//code that reacts to the action... 
+}
+http://docs.oracle.com/javase/tutorial/uiswing/events/actionlistener.html
+add Action Listener to any place that gets input from user via mouse or keyboard
+
+
+System.exit(0);
+to close the app
+
+
+java applet tags in html <applet code="myapplet.class" width="" height="">
+<body>
+6 <hr/>
+7 <p>
+8 This applet is from the book
+9 <a href="http://www.horstmann.com/corejava.html">Core Java</a>
+10 by <em>Cay Horstmann</em> and <em>Gary Cornell</em>.
+11 </p>
+12            <applet code="WelcomeApplet.class" width="400" height="200">
+13              <param name="greeting" value ="Welcome to Core Java!"/>
+14            </applet>
+15 <hr/>
+16   
+17 </body>
+
+
+
+Java.awt.*
+Contains classes for creating user interfaces and for painting graphics and images (GUIs).
+older than swing
+
+
+Package java.net
+Provides the classes for implementing networking applications.
+contains content handlers, cookie stuff, communication protocols, sockets stuff, url stuff, etc
+
+
+JApplet
+a class to create web applets using swing
+part of swing
+any applet that uses swing components must be implemeneted with a subclass of Japplet
+http://docs.oracle.com/javase/tutorial/uiswing/components/applet.html
+
+
+JPanel
+provides general purpose container for lightweight components
+can help with painting look and feel
+it uses a layout manager to position and size its components
+http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html
+
+
+JButton
+to create buttons
+needs implementing action listeners
+
+
+
+eclipse note
+shift+f2 to read documentation about a selected method or class inside eclipse
+
+
