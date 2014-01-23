@@ -122,3 +122,37 @@ shift+f2 to read documentation about a selected method or class inside eclipse
 
 
 //end of ch2
+
+
+__________________
+
+
+ch3
+
+floats
+
+doubles
+
+== in comparison!!! not =
+
+
+in java its considred good style to declare variables as close as possible to the point where they are first used
+
+
+in java we use the keyword "final" to denote a constant
+final double CM_PER_INCH = 2.54;
+in java we ussually make a constant available to various methods in a class
+in that case its called class constant
+in that case we use static final
+if its also marked public, that means other classes can use it as well
+
+
+modulus %
+for integer remainders from division
+
+
+!= for testing not equal to
+
+
+for sqrt
+double y = Math.sqrt(x);
