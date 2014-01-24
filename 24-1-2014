@@ -1,0 +1,256 @@
+ch3 cont.
+
+some of the math class methods
+
+math.abs -- to get absoulute value
+math.max(int a, int b) -- gets the bigger of 2 values a, b
+math.min (int a, int b) -- gets the smaller of 2 values a, b
+math.round(float a) -- for rounding
+E -- constant
+PI -- constant
+sin, cos, tan, asin, acos, atan, etc
+math.cbrt(double a) -- gets the cubic root of a value
+math.ceil(double a) -- rounds up to the nearest integer
+math.floor(double a) -- rounds down to the nearest integer
+math.pow (double a, double b) -- returns the value of the first number power the second number // only way to
+calculate power in java
+math.random() -- returns a random double between 0.0 and 1.0
+math.sqrt(double a) -- calculates square root
+math.todegrees -- calculate an angle radians to degrees
+math.toradians -- calculate an angle degrees to radians
+
+
+when 2 values are combined with a binary operator, both operands are converted into a common type before the
+operation is carried out
+
+
+int values are automatically converted to double values if needed
+to make the opposite or operations in which we might lose percision, we use a cast
+double y = 23.23;
+int x = (int) y;
+casting does not round a value, it just removes everything after the dot even if its .999
+
+
+enumerated types
+Sometimes, a variable should only hold a restricted set of values. For example, you may sell
+clothes or pizza in four sizes: small, medium, large, and extra large. Of course, you could encode
+these sizes as integers 1, 2, 3, 4, or characters S, M, L, and X. But that is an error-prone setup. It is
+too easy for a variable to hold a wrong value (such as 0 or m).
+You can define your own enumerated type whenever such a situation arises. An enumerated
+type has a finite number of named values. For example:
+enum Size { SMALL, MEDIUM, LARGE, EXTRA_LARGE };
+Now you can declare variables of this type:
+Size s = Size.MEDIUM;
+A variable of type Size can hold only one of the values listed in the type declaration, or the
+special value null that indicates that the variable is not set to any value at all.
+public enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    THURSDAY, FRIDAY, SATURDAY 
+}
+http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+
+
+substring
+we can extract a substring from a larger string with the substring method
+String greeting = "Hello";
+String s = greeting.substring(0, 3); // get string from letter 0 to letter 3 = hel
+
+we can do also 
+string s = greeting.substring(2) // this will get substring from char 2 to the end
+
+
+more string methods
+http://www.tutorialspoint.com/java/java_strings.htm
+
+
+exellent resource for java basics
+http://www.tutorialspoint.com/java/
+
+
+every java object can be converted into a string
+
+
+To test whether two strings are equal, use the equals method. The expression
+s.equals(t)
+returns true or false
+
+
+is perfectly legal. To test whether two strings are identical except for the upper/lowercase letter
+distinction, use the equalsIgnoreCase method.
+"Hello".equalsIgnoreCase("hello")
+
+
+Do not use the == operator to test whether two strings are equal! It only determines whether or
+not the strings are stored in the same location.
+
+
+The empty string "" is a string of length 0. You can test whether a string is empty by calling
+if (str.length() == 0)
+or
+if (str.equals(""))
+
+
+string can also hold null if it refers to nothing at all
+
+
+common string methods
+char charAt(int index)
+returns the code unit at the specified location. You probably don’t want to call this method
+unless you are interested in low-level code units.
+
+int compareTo(String other)
+returns a negative value if the string comes before other in dictionary order, a positive
+value if the string comes after other in dictionary order, or 0 if the strings are equal.
+
+boolean endsWith(String suffix)
+returns true if the string ends with suffix.
+
+boolean equals(Object other)
+returns true if the string equals other.
+
+boolean equalsIgnoreCase(String other)
+returns true if the string equals other, except for upper/lowercase distinction.
+
+int indexOf(String str)
+• int indexOf(String str, int fromIndex)
+returns the start of the first substring equal to the string str or the code point cp, starting
+at index 0 or at fromIndex, or -1 if str does not occur in this string.
+
+• int lastIndexOf(String str)
+• int lastIndexOf(String str, int fromIndex)
+returns the start of the last substring equal to the string str or the code point cp, starting
+at the end of the string or at fromIndex.
+
+• int length()
+returns the length of the string.
+
+String replace(CharSequence oldString, CharSequence newString)
+returns a new string that is obtained by replacing all substrings matching oldString in the
+string with the string newString. You can supply String or StringBuilder objects for
+the CharSequence parameters.
+
+boolean startsWith(String prefix)
+returns true if the string begins with prefix.
+
+String substring(int beginIndex)
+• String substring(int beginIndex, int endIndex)
+returns a new string consisting of all code units from beginIndex until the end of the
+string or until endIndex - 1.
+
+String toLowerCase()
+returns a new string containing all characters in the original string, with uppercase
+characters converted to lowercase.
+
+String toUpperCase()
+returns a new string containing all characters in the original string, with lowercase
+characters converted to uppercase.
+
+• String trim()
+returns a new string by eliminating all leading and trailing spaces in the original string.
+
+
+StringBuilder
+Occasionally, you need to build up strings from shorter strings, such as keystrokes or words from
+a file. It would be inefficient to use string concatenation for this purpose. Every time you
+concatenate strings, a new String object is constructed. This is time-consuming and wastes
+memory. Using the StringBuilder class avoids this problem.
+
+if you need to build a string from many small pieces. First, construct an empty
+string builder:
+StringBuilder builder = new StringBuilder();
+
+Each time you need to add another part, call the append method.
+Click here to view code image
+builder.append(ch); // appends a single character
+builder.append(str); // appends a string
+
+When you are done building the string, call the toString method. You will get a String object
+with the character sequence contained in the builder.
+String completedString = builder.toString();
+
+
+Scanner
+To read console input, you first construct a Scanner that is attached to
+System.in:
+Scanner in = new Scanner(System.in);
+Now you can use the various methods of the Scanner class to read input. For example, the
+nextLine method reads a line of input.
+System.out.print("What is your name? ");
+String name = in.nextLine();
+here we used nextLine becouse the entered text might include spaces
+if we want only to catch 1 word we use in.next();
+
+to read an integer we use the in.nextInt() method
+similarly we may use the nextDouble()
+
+scanner is part of the java.util package
+
+the scanner class is not suitable for reading a password from console, since its visible
+to everyone
+instead we use a "console" class specifically for this purpose
+
+Console cons = System.console();
+String username = cons.readLine("User name: ");
+char[] passwd = cons.readPassword("Password: ");
+
+
+• Scanner(InputStream in)
+constructs a Scanner object from the given input stream.
+• String nextLine()
+reads the next line of input.
+• String next()
+reads the next word of input (delimited by whitespace).
+• int nextInt()
+117
+• double nextDouble()
+reads and converts the next character sequence that represents an integer or floatingpoint
+number.
+• boolean hasNext()
+tests whether there is another word in the input.
+• boolean hasNextInt()
+• boolean hasNextDouble()
+tests whether the next character sequence represents an integer or floating-point number.
+
+
+
+
+scanner is also used for reading from files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
