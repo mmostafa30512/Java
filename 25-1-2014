@@ -1,0 +1,66 @@
+formatting output
+
+f = floating point number
+s = string
+d = decimal integer
+e = exponential floating point
+c = character
+b = boolean
+h = hashcode
+tx = date and time
+% = the percent symbol %
+
+system.out.printf("%,.2f", 10000.0 / 3.0);
+
++ prints sign for postivie and negative numbers
+space = adds space before positive numbers
+0 = adds leading zeros
+, = adds group seperators
+# (for f format) = always include a decimal point
+# (for x or 0 format) = adds 0x or 0 prefix
+$ = specifies the index of the argument to be formatted
+we can use multiple flags
+
+date and time conversion characters
+C = complete date and time
+F = iso date (2004-02-09)
+D = US formatted date (02/09/2004)
+T = 24 hr time
+r = 12 hr time
+R = 24 hr time no seconds
+Y = 4 digit year 2004
+y = last 2 digits of the year 04
+C = first 2 digits of the year 20
+B = full month name
+b or h = abbreviated month name feb
+m = 2 digit month 02
+d = 2 digit day 09
+e = 2 digit day 9
+A = full weekday name Monday
+a = abbreviate weekday name Mon
+other things include minutes, milliseconds, miliseconds since 1970, etc
+
+
+System.out.printf("%1$s %2$tB %2$te, %2$tY", "Due date:", new Date());
+prints
+Due date: February 9, 2004
+
+
+
+File input and output
+to read from a file, we construct a Scanner object first
+Scanner in = new Scanner(Paths.get("myfile.txt"));
+If the file name contains backslashes, remember to escape each of them with an additional
+backslash: "c:\\mydirectory\\myfile.txt".
+
+Now you can read from the file, using any of the Scanner methods that we already described.
+To write to a file, construct a PrintWriter object. In the constructor, simply supply the file name:
+PrintWriter out = new PrintWriter("myfile.txt");
+If the file does not exist, it is created. You can use the print, println, and printf commands as
+you did when printing to System.out.
+
+
+
+
+
+
